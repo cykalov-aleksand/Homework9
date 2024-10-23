@@ -9,8 +9,8 @@ public class Main {
         WeeklyExpenses[0] = 20_000;
         WeeklyExpenses[1] = 33_034;
         WeeklyExpenses[2] = 1;
-        WeeklyExpenses[3] = 10_115;
-        WeeklyExpenses[4] = 10_115;
+       WeeklyExpenses[3] = 10_115;
+         WeeklyExpenses[4] = 10_115;
         for (byte week = 0; week < WeeklyExpenses.length; week++) {
             if (WeeklyExpenses[week] != -1) {
                 System.out.println("Затраты за " + (week + 1) + " неделю равны " + WeeklyExpenses[week]);
@@ -44,12 +44,13 @@ public class Main {
             System.out.println("Таблица за месяц не заполнена");
         } else {
             System.out.println("Минимальная сумма трат в месяце за неделю составила: " + minimumAmount + "руб.");
-               for (int element : WeeklyExpenses) {
-                if (element != -1 && element >= minimumAmount) {
-                    minimumAmount = element;
+            int maximumAmount=minimumAmount;
+            for (int element : WeeklyExpenses) {
+                if (element != -1 && element >= maximumAmount) {
+                    maximumAmount = element;
                 }
             }
-            System.out.println("Максимальная сумма трат в месяце за неделю составила: "+minimumAmount + "руб.");
+            System.out.println("Максимальная сумма трат в месяце за неделю составила: "+maximumAmount + "руб.");
         }
         System.out.println("\n-------------Задание 3-------------");
         int numberWeeks = 0;
